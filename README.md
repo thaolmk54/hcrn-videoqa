@@ -4,17 +4,14 @@ We introduce a general-purpose reusable neural unit called Conditional Relation 
 
 Illustrations of CRN unit and the result of model building HCNR for VideoQA:
 
-<p float="left">
-  <img src="CRNUnit.png" width="100" />
-  <img src="overview.png" width="100" /> 
-</p>
+![alt-text-1](CRNUnit.png "CRN Unit") ![alt-text-2](overview.png "HCRN Architecture for VideoQA")
 
 Check out our [paper](https://arxiv.org/abs/2002.10698) for details.
 
 ## Setups
 1. Clone the repository:
 
-    `git clone https;//github.com/thaolmk54/hcrn-videoqa.git`
+    `git clone https://github.com/thaolmk54/hcrn-videoqa.git`
 
 2. Download [TGIF-QA](https://github.com/YunseokJANG/tgif-qa), [MSRVTT-QA, MSVD-QA](https://github.com/xudejing/video-question-answering) dataset and edit corresponding paths in the repo upon where you locate your data.
 
