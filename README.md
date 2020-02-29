@@ -4,7 +4,10 @@ We introduce a general-purpose reusable neural unit called Conditional Relation 
 
 Illustrations of CRN unit and the result of model building HCNR for VideoQA:
 
-![alt-text-1](CRNUnit.png "CRN Unit") ![alt-text-2](overview.png "HCRN Architecture for VideoQA")
+<p float="middle">
+  <img src="CRNUnit.png" width="425" />
+  <img src="overview.png" width="425" /> 
+</p>
 
 Check out our [paper](https://arxiv.org/abs/2002.10698) for details.
 
