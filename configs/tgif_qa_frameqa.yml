@@ -1,0 +1,31 @@
+gpu_id: 1
+multi_gpus: False
+num_workers: 4
+seed: 666
+exp_name: 'expTGIF-QAFrameQA'
+
+train:
+  lr: 0.0001
+  batch_size: 32
+  restore: False
+  max_epochs: 25
+  word_dim: 300
+  module_dim: 512
+  glove: True
+  k_max_frame_level: 16
+  k_max_clip_level: 8
+  spl_resolution: 1
+
+
+val:
+  flag: True
+
+test:
+  test_num: 0
+  write_preds: False
+
+dataset:
+  name: 'tgif-qa'
+  question_type: 'frameqa'
+  data_dir: 'data/tgif-qa/frameqa'
+  save_dir: 'results/'

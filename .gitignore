@@ -1,0 +1,12 @@
+*.pth
+*.h5
+*.tsv
+*.jpg
+*.zip
+*.pkl
+*.xml
+*.p
+*.svg
+*.model
+.idea/*
+__pycache__/
