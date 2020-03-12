@@ -38,7 +38,7 @@ Depending on the task to chose `question_type` out of 4 options: `action, transi
 
     `python preprocess/preprocess_features.py --dataset tgif-qa --model resnext101 --image_height 112 --image_width 112 --question_type {question_type}`
 
-**Note**: Extracting visual feature takes a long time. You can download our pre-extracted feature (action task) from [here](not available) for appearance and [here](https://drive.google.com/open?id=1IGxBQthWv9eSKoy-xVZC-10PcVEb-x12) for motion.
+**Note**: Extracting visual feature takes a long time. You can download our pre-extracted feature (action task) from [here](https://bit.ly/2TX9rlZ) for appearance and [here](https://drive.google.com/open?id=1IGxBQthWv9eSKoy-xVZC-10PcVEb-x12) for motion.
 #### Proprocess linguistic features
 1. Download [glove pretrained 300d word vectors](http://nlp.stanford.edu/data/glove.840B.300d.zip) to `data/glove/` and process it into a pickle file:
 
