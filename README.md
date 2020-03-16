@@ -1,4 +1,4 @@
-# Hierarchical Conditional Relation Networks for Video Question Answering
+# Hierarchical Conditional Relation Networks for Video Question Answering (HCRN-VideoQA)
 
 We introduce a general-purpose reusable neural unit called Conditional Relation Network (CRN) that encapsulates and transforms an array of tensorial objects into a new array of the same kind, conditioned on a contextual feature. The flexibility of CRN units is then examined in solving Video Question Answering, a challenging problem requiring joint comprehension of video content and natural language processing.
 
@@ -15,7 +15,7 @@ Check out our [paper](https://arxiv.org/abs/2002.10698) for details.
 
     `git clone https://github.com/thaolmk54/hcrn-videoqa.git`
 
-2. Download [TGIF-QA](https://github.com/YunseokJANG/tgif-qa), [MSRVTT-QA, MSVD-QA](https://github.com/xudejing/video-question-answering) dataset and edit corresponding paths in the repo upon where you locate your data.
+2. Download [TGIF-QA](https://github.com/YunseokJANG/tgif-qa), [MSRVTT-QA, MSVD-QA](https://github.com/xudejing/video-question-answering) dataset and edit absolute paths in `preprocess/preprocess_features.py` and `preprocess/preprocess_questions.py` upon where you locate your data. Default paths are with `/ceph-g/lethao/datasets/{dataset_name}/`.
 
 3. Install dependencies:
 ```bash
@@ -62,7 +62,7 @@ python validate.py --cfg configs/tgif_qa_action.yml
 ```
 **Note**: Pretrained model for action task is available [here](https://drive.google.com/open?id=1xzD4JbuoFYAgJG41eAwBo77i3oVrbKyg). Save the file in `results/expTGIF-QAAction/ckpt/` for evaluation.
 ## Experiments with MSRVTT-QA and MSVD-QA
-The following to to run experiments with MSRVTT-QA dataset, replace `msrvtt-qa` with `msvd-qa` to run with MSVD-QA dataset.
+The following is to run experiments with MSRVTT-QA dataset, replace `msrvtt-qa` with `msvd-qa` to run with MSVD-QA dataset.
 #### Preprocessing visual features
 1. To extract appearance feature:
 
@@ -75,12 +75,12 @@ The following to to run experiments with MSRVTT-QA dataset, replace `msrvtt-qa` 
 #### Proprocess linguistic features
 Preprocess train/val/test questions:
 
-    `python preprocess/preprocess_questions.py --dataset msrvtt-qa --glove_pt data/glove/glove.840.300d.pkl --mode train`
+    python preprocess/preprocess_questions.py --dataset msrvtt-qa --glove_pt data/glove/glove.840.300d.pkl --mode train
     
-    `python preprocess/preprocess_questions.py --dataset msrvtt-qa --question_type {question_type} --mode val`
+    python preprocess/preprocess_questions.py --dataset msrvtt-qa --question_type {question_type} --mode val
     
-    `python preprocess/preprocess_questions.py --dataset msrvtt-qa --question_type {question_type} --mode test`
-      
+    python preprocess/preprocess_questions.py --dataset msrvtt-qa --question_type {question_type} --mode test
+  
 #### Training
 ```bash
 python train.py --cfg configs/msrvtt_qa.yml
@@ -91,7 +91,16 @@ To evaluate the trained model, run the following:
 ```bash
 python validate.py --cfg configs/msrvtt_qa.yml
 ```
-
+## Citations
+If you make you of this repository for your research, please cite the following paper:
+```
+@article{le2020hierarchical,
+  title={Hierarchical Conditional Relation Networks for Video Question Answering},
+  author={Le, Thao Minh and Le, Vuong and Venkatesh, Svetha and Tran, Truyen},
+  journal={arXiv preprint arXiv:2002.10698},
+  year={2020}
+}
+```
 ## Acknowledgement
 - As for motion feature extraction, we adapt ResNeXt-101 model from this [repo](https://github.com/kenshohara/video-classification-3d-cnn-pytorch) to our code. Thank @kenshohara for releasing the code and the pretrained models. 
 - We refer to this [repo](https://github.com/facebookresearch/clevr-iep) for preprocessing.
