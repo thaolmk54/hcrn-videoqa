@@ -219,8 +219,8 @@ def process_questions_openended(args):
             'question_answer_token_to_idx': {'<NULL>': 0, '<UNK>': 1}
         }
 
-        print('Write into %s' % args.vocab_json.format(args.question_type, args.question_type, args.mode))
-        with open(args.vocab_json.format(args.question_type, args.question_type, args.mode), 'w') as f:
+        print('Write into %s' % args.vocab_json.format(args.question_type, args.question_type))
+        with open(args.vocab_json.format(args.question_type, args.question_type), 'w') as f:
             json.dump(vocab, f, indent=4)
 
         # split 10% of questions for evaluation
@@ -299,8 +299,8 @@ def process_questions_mulchoices(args):
             'question_answer_token_to_idx': question_answer_token_to_idx,
         }
 
-        print('Write into %s' % args.vocab_json.format(args.question_type, args.question_type, args.mode))
-        with open(args.vocab_json.format(args.question_type, args.question_type, args.mode), 'w') as f:
+        print('Write into %s' % args.vocab_json.format(args.question_type, args.question_type))
+        with open(args.vocab_json.format(args.question_type, args.question_type), 'w') as f:
             json.dump(vocab, f, indent=4)
 
         # split 10% of questions for evaluation
