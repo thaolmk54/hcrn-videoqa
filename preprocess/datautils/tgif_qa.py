@@ -103,29 +103,29 @@ def multichoice_encoding_data(args, vocab, questions, video_names, video_ids, an
     video_names_tbw = []
     correct_answers = []
     for idx, question in enumerate(questions):
-            question = question.lower()[:-1]
-            question_tokens = nltk.word_tokenize(question)
-            question_encoded = utils.encode(question_tokens, vocab['question_answer_token_to_idx'], allow_unk=True)
-            questions_encoded.append(question_encoded)
-            questions_len.append(len(question_encoded))
-            question_ids.append(idx)
-            video_names_tbw.append(video_names[idx])
-            video_ids_tbw.append(video_ids[idx])
-            # grounthtruth
-            answer = int(answers[idx])
-            correct_answers.append(answer)
-            # answer candidates
-            candidates = ans_candidates[idx]
-            candidates_encoded = []
-            candidates_len = []
-            for ans in candidates:
-                ans = ans.lower()
-                ans_tokens = nltk.word_tokenize(ans)
-                cand_encoded = utils.encode(ans_tokens, vocab['question_answer_token_to_idx'], allow_unk=True)
-                candidates_encoded.append(cand_encoded)
-                candidates_len.append(len(cand_encoded))
-            all_answer_cands_encoded.append(candidates_encoded)
-            all_answer_cands_len.append(candidates_len)
+        question = question.lower()[:-1]
+        question_tokens = nltk.word_tokenize(question)
+        question_encoded = utils.encode(question_tokens, vocab['question_answer_token_to_idx'], allow_unk=True)
+        questions_encoded.append(question_encoded)
+        questions_len.append(len(question_encoded))
+        question_ids.append(idx)
+        video_names_tbw.append(video_names[idx])
+        video_ids_tbw.append(video_ids[idx])
+        # grounthtruth
+        answer = int(answers[idx])
+        correct_answers.append(answer)
+        # answer candidates
+        candidates = ans_candidates[idx]
+        candidates_encoded = []
+        candidates_len = []
+        for ans in candidates:
+            ans = ans.lower()
+            ans_tokens = nltk.word_tokenize(ans)
+            cand_encoded = utils.encode(ans_tokens, vocab['question_answer_token_to_idx'], allow_unk=True)
+            candidates_encoded.append(cand_encoded)
+            candidates_len.append(len(cand_encoded))
+        all_answer_cands_encoded.append(candidates_encoded)
+        all_answer_cands_len.append(candidates_len)
 
     # Pad encoded questions
     max_question_length = max(len(x) for x in questions_encoded)

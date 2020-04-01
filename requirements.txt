@@ -6,3 +6,5 @@ Pillow
 torch==1.2.0
 torchvision==0.2.1
 tqdm
+termcolor
+pyyaml
