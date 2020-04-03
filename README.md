@@ -13,7 +13,7 @@ Check out our [paper](https://arxiv.org/abs/2002.10698) for details.
 ## Setups
 1. Clone the repository:
 ```
- git clone https://github.com/thaolmk54/hcrn-videoqa.git`
+ git clone https://github.com/thaolmk54/hcrn-videoqa.git
 ```
 
 2. Download [TGIF-QA](https://github.com/YunseokJANG/tgif-qa), [MSRVTT-QA, MSVD-QA](https://github.com/xudejing/video-question-answering) dataset and edit absolute paths in `preprocess/preprocess_features.py` and `preprocess/preprocess_questions.py` upon where you locate your data. Default paths are with `/ceph-g/lethao/datasets/{dataset_name}/`.
