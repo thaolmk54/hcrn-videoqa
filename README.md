@@ -44,7 +44,12 @@ python preprocess/preprocess_features.py --gpu_id 2 --dataset tgif-qa --model re
 python preprocess/preprocess_features.py --dataset tgif-qa --model resnext101 --image_height 112 --image_width 112 --question_type {question_type}
 ```
 
-**Note**: Extracting visual feature takes a long time. You can download our pre-extracted feature (action task) from [here](https://bit.ly/2TX9rlZ) for appearance and [here](https://drive.google.com/open?id=1IGxBQthWv9eSKoy-xVZC-10PcVEb-x12) for motion.
+**Note**: Extracting visual feature takes a long time. You can download our pre-extracted features from [here](https://bit.ly/2TX9rlZ) and save them in `data/tgif-qa/{question_type}/`. Please use the following command to join split files:
+
+```
+cat tgif-qa_{question_type}_appearance_feat.h5.part* > tgif-qa_{question_type}_appearance_feat.h5
+```
+
 #### Proprocess linguistic features
 1. Download [glove pretrained 300d word vectors](http://nlp.stanford.edu/data/glove.840B.300d.zip) to `data/glove/` and process it into a pickle file:
 
@@ -102,7 +107,7 @@ To evaluate the trained model, run the following:
 python validate.py --cfg configs/msrvtt_qa.yml
 ```
 ## Citations
-If you make you of this repository for your research, please cite the following paper:
+If you make use of this repository for your research, please cite the following paper:
 ```
 @article{le2020hierarchical,
   title={Hierarchical Conditional Relation Networks for Video Question Answering},
