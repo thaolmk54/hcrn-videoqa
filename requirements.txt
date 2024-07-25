@@ -3,7 +3,7 @@ h5py
 nltk
 numpy
 Pillow
-torch==1.2.0
+torch==2.2.0
 torchvision==0.2.1
 tqdm
 termcolor
